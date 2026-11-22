@@ -1,0 +1,34 @@
+# Rust build and profiling output
+target/
+*.rs.bk
+*.profraw
+*.profdata
+
+# Python bytecode, environments, and tooling output
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+/build/
+/dist/
+*.egg-info/
+
+# Span local data and caches
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+*.sqlite-*
+*.sqlite3-*
+*.db-journal
+memory-snapshot-*/
+.fastembed_cache/
+
+ROADMAP.md

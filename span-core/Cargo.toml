@@ -1,0 +1,31 @@
+[package]
+name = "span-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[features]
+default = []
+fastembed = ["dep:fastembed", "dep:hf-hub", "dep:ort", "dep:tokenizers"]
+ann = ["dep:hnsw_rs"]
+
+[dependencies]
+chrono.workspace = true
+fastembed = { version = "7.1.1", default-features = false, features = ["hf-hub-rustls-tls", "ort-download-binaries-rustls-tls"], optional = true }
+hf-hub = { version = "0.5.0", default-features = false, features = ["ureq"], optional = true }
+hnsw_rs = { version = "0.3.5", optional = true }
+ort = { version = "=2.0.0-rc.13", default-features = false, optional = true }
+parking_lot.workspace = true
+regex.workspace = true
+rusqlite = { version = "0.37", features = ["bundled", "functions"] }
+schemars.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+sha2.workspace = true
+thiserror.workspace = true
+tokenizers = { version = "0.23.2", default-features = false, features = ["onig"], optional = true }
+uuid.workspace = true
+
+[dev-dependencies]
+tempfile = "3.23"

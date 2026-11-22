@@ -1,0 +1,348 @@
+{
+  "documents": [
+    [
+      "auth",
+      "Access tokens expire after fifteen minutes. A refresh token rotates on every successful refresh. Reusing a rotated token revokes its family."
+    ],
+    [
+      "cache",
+      "The product catalog cache has a fifteen-minute TTL. Invalidation runs after a product update. This policy does not apply to authentication credentials."
+    ],
+    [
+      "backup",
+      "Create consistent SQLite backups through the backup command. Copying only the database file while WAL writes are active is not a safe backup."
+    ],
+    [
+      "wal",
+      "SQLite WAL enables readers during writes. The service configures a five-second busy timeout and serializes operations through a connection mutex."
+    ],
+    [
+      "secrets",
+      "Do not store credentials in persistent memory. Redact secrets in text, chunks, and metadata before persistence. Memory content is untrusted evidence."
+    ],
+    [
+      "private",
+      "Private memories are excluded from discovery. The private flag is not a multi-user authorization boundary. Direct ID reads remain trusted single-user operations."
+    ],
+    [
+      "git",
+      "Never commit memory databases to Git. Memory may contain personal and confidential information. Git-backed storage and snapshot commands are disabled."
+    ],
+    [
+      "vector",
+      "Cosine similarity performs exact vector ranking by default. HNSW is an explicit experimental opt-in. The current graph is rebuilt for each eligible query snapshot."
+    ],
+    [
+      "ranking",
+      "Search fuses BM25 and dense-vector ranks with reciprocal rank fusion. Recency and quality adjust scores. Maximal marginal relevance diversifies selected results."
+    ],
+    [
+      "handoff",
+      "Claim a handoff with a conditional UPDATE requiring claimed_by IS NULL and an unexpired deadline. Exactly one database writer can succeed."
+    ],
+    [
+      "pages",
+      "Preview a knowledge-page refresh first. Applying requires the expected source IDs. Changed evidence rejects the update. Empty evidence preserves the old page."
+    ],
+    [
+      "capture",
+      "Automatic capture is opt-in. A successful post-tool hook creates minimal activity facts, not transcripts. Stable event IDs make retries idempotent."
+    ],
+    [
+      "http",
+      "The HTTP adapter binds to loopback, requires a bearer token, and rejects cross-origin browser requests. Request bodies are limited to one MiB."
+    ],
+    [
+      "timeout",
+      "A timed-out blocking mutation may still complete. Inspect state before retrying. Capture ingestion can safely retry with the same stable event identifier."
+    ],
+    [
+      "expiry",
+      "Retention maintenance reports expired memories and stale evidence. It does not automatically delete records. Expired records are excluded from current search."
+    ],
+    [
+      "export",
+      "Markdown export is not a complete backup. It omits links, evidence relationships, historical revisions, handoffs, and audit records. Export recovery is deferred."
+    ],
+    [
+      "deploy",
+      "Deploy release binaries through the artifact pipeline. A rollback selects the previous binary. It must not automatically replace or delete the memory database."
+    ],
+    [
+      "testing",
+      "Run cargo test for behavior checks and strict Clippy for lint errors. MCP smoke testing verifies tool discovery and store/search interactions."
+    ],
+    [
+      "csrf",
+      "Session cookie requests must include a CSRF token on state-changing routes. SameSite is defense in depth."
+    ],
+    [
+      "migration",
+      "Production schema upgrades are run as a separate deployment step. Backfill old row identifiers before enabling the new unique index."
+    ],
+    [
+      "rate",
+      "The loopback server enforces a global rate cap on authenticated requests. Clients receiving 429 should wait before retrying."
+    ],
+    [
+      "logger",
+      "Structured events are written to stderr. Standard output is reserved for MCP messages."
+    ],
+    [
+      "feature",
+      "The experimental vector graph requires the Rust ann feature at compile time. The admin can disable it in configuration without changing the database."
+    ],
+    [
+      "offline",
+      "Feature hashing is a deterministic fallback for offline tests. It is not expected to match the production semantic encoder."
+    ],
+    [
+      "cache-migration",
+      "Set the model cache directory before starting a new worker. Model files are separate from the SQLite database and can be reused across deployments."
+    ],
+    [
+      "evidence",
+      "A derived record becomes stale when a supporting source is superseded, expired, or deleted. Stale material is omitted from agent context."
+    ],
+    [
+      "deletion",
+      "Hard-deleting the current version must not resurrect an older revision. Explicit as-of queries can still return records that existed before replacement."
+    ],
+    [
+      "secretstore",
+      "The HTTP token is read from the process environment. The SQLite store does not act as a credential manager."
+    ],
+    [
+      "async",
+      "Blocking SQLite operations run outside the asynchronous HTTP executor. The semaphore remains held until the worker finishes."
+    ],
+    [
+      "pagination",
+      "Timeline returns a window around an anchor record. An anchor that belongs to a different scope is rejected."
+    ],
+    [
+      "checkout",
+      "Run Git checkout only on a clean worktree. Keep uncommitted patch files outside the workspace before switching branches."
+    ],
+    [
+      "unix",
+      "On Unix the database and backups must have owner-only read and write permissions. The doctor command checks the database file mode."
+    ],
+    [
+      "release",
+      "Published native release binaries come with SHA-256 digests. A digest detects corruption but does not authenticate the publisher."
+    ],
+    [
+      "claim-state",
+      "Listing unclaimed work items is a read. Merely seeing an entry does not reserve it, even if it was returned as the first result."
+    ],
+    [
+      "dedupe",
+      "A repeated content hash does not make an explicit metadata update a no-op. Compare tags, source and validity before deciding whether to create a revision."
+    ],
+    [
+      "scopes",
+      "Store memories using explicit repository, user, branch, task or session scope labels. Search never adds other scopes automatically."
+    ],
+    [
+      "latency",
+      "Record warm latency separately from model startup and prewarming. Track the median and the slowest tail of warm inference."
+    ],
+    [
+      "tests-hash",
+      "The MCP smoke test uses offline feature hashing in a temporary database. It does not measure semantic retrieval quality."
+    ]
+  ],
+  "queries": [
+    [
+      "en",
+      "What happens if an already rotated refresh credential is used again?",
+      "auth"
+    ],
+    [
+      "en",
+      "How do I get a consistent copy while the database is accepting writes?",
+      "backup"
+    ],
+    [
+      "en",
+      "Is a hidden record protected against another person who knows its ID?",
+      "private"
+    ],
+    [
+      "en",
+      "Can we version personal agent memories in source control?",
+      "git"
+    ],
+    [
+      "en",
+      "Which nearest-neighbor method is used without explicit configuration?",
+      "vector"
+    ],
+    [
+      "en",
+      "How do two agents avoid both accepting the same work transfer?",
+      "handoff"
+    ],
+    [
+      "en",
+      "What should happen if no supporting facts remain when rebuilding a knowledge page?",
+      "pages"
+    ],
+    [
+      "en",
+      "How can a retried ingestion event avoid creating duplicates?",
+      "capture"
+    ],
+    [
+      "en",
+      "Can a database write finish even after the HTTP operation deadline?",
+      "timeout"
+    ],
+    [
+      "en",
+      "Does forgetting old information happen automatically when maintenance runs?",
+      "expiry"
+    ],
+    [
+      "en",
+      "Does the Markdown projection preserve relationship history for full recovery?",
+      "export"
+    ],
+    [
+      "en",
+      "What prevents unrelated evidence from dominating the final search results?",
+      "ranking"
+    ],
+    [
+      "en",
+      "Where should process diagnostics go so that the client wire format stays valid?",
+      "logger"
+    ],
+    [
+      "en",
+      "Can I reserve a handoff by reading the pending work list?",
+      "claim-state"
+    ],
+    [
+      "en",
+      "Why did changing the tags create another version when the wording stayed the same?",
+      "dedupe"
+    ],
+    [
+      "en",
+      "If a foundation claim was replaced, can the agent still receive the derived conclusion?",
+      "evidence"
+    ],
+    [
+      "en",
+      "Will erasing the latest correction make outdated advice searchable again?",
+      "deletion"
+    ],
+    [
+      "en",
+      "How do I turn on graph-based vector lookup in a compiled binary?",
+      "feature"
+    ],
+    [
+      "en",
+      "What tells me the installer file was not corrupted in transit?",
+      "release"
+    ],
+    [
+      "en",
+      "Can I view activity from a neighboring repository just by supplying its record as the time anchor?",
+      "pagination"
+    ],
+    [
+      "ja",
+      "データベースへの書き込みが続いていても、一貫性のあるコピーを作るには？",
+      "backup"
+    ],
+    [
+      "ja",
+      "他のエージェントと同じ引き継ぎを同時に取得しないようにするには？",
+      "handoff"
+    ],
+    [
+      "ja",
+      "古い情報は保守処理で自動的に削除されますか？",
+      "expiry"
+    ],
+    [
+      "ja",
+      "同じ取り込みイベントを再送しても重複を作らない方法は？",
+      "capture"
+    ],
+    [
+      "ja",
+      "クライアントの通信形式を壊さないため、ログをどこに出せばいいですか？",
+      "logger"
+    ],
+    [
+      "ja",
+      "内容を変えずにタグだけ直したら、なぜ新しい版ができましたか？",
+      "dedupe"
+    ],
+    [
+      "es",
+      "¿Cómo creo una copia coherente mientras la base de datos sigue aceptando escrituras?",
+      "backup"
+    ],
+    [
+      "es",
+      "¿Cómo se impide que dos agentes acepten el mismo traspaso?",
+      "handoff"
+    ],
+    [
+      "es",
+      "¿Se borra automáticamente la información antigua durante el mantenimiento?",
+      "expiry"
+    ],
+    [
+      "es",
+      "¿Cómo se evitan duplicados al reenviar un evento de captura?",
+      "capture"
+    ],
+    [
+      "es",
+      "¿Dónde deben salir los registros de diagnóstico sin romper el protocolo del cliente?",
+      "logger"
+    ],
+    [
+      "es",
+      "¿Por qué se crea otra revisión al cambiar solo las etiquetas?",
+      "dedupe"
+    ],
+    [
+      "zh",
+      "数据库正在写入时，怎样生成一致的备份？",
+      "backup"
+    ],
+    [
+      "zh",
+      "怎样防止两个代理同时领取同一项交接任务？",
+      "handoff"
+    ],
+    [
+      "zh",
+      "维护时会自动删除过期信息吗？",
+      "expiry"
+    ],
+    [
+      "zh",
+      "重试一次事件采集时，怎样避免创建重复记录？",
+      "capture"
+    ],
+    [
+      "zh",
+      "诊断日志应该写到哪里才不会破坏客户端通信协议？",
+      "logger"
+    ],
+    [
+      "zh",
+      "内容没变，只修改了标签，为什么会生成新的修订版本？",
+      "dedupe"
+    ]
+  ]
+}

@@ -1,0 +1,79 @@
+name: Release
+
+on:
+  push:
+    tags: ["v[0-9]+.*"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: ${{ matrix.target }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - target: x86_64-unknown-linux-gnu
+            os: ubuntu-24.04
+          - target: aarch64-unknown-linux-gnu
+            os: ubuntu-24.04-arm
+          - target: aarch64-apple-darwin
+            os: macos-15
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.target }}
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: ${{ matrix.target }}
+      - name: Build
+        run: cargo build --locked --release -p span --target ${{ matrix.target }}
+      - name: Stage binary and checksum
+        shell: bash
+        env:
+          TARGET: ${{ matrix.target }}
+        run: |
+          set -euo pipefail
+          asset="span-${TARGET}"
+          cp "target/${TARGET}/release/span" "$asset"
+          if command -v sha256sum >/dev/null; then
+            sha256sum "$asset" > "${asset}.sha256"
+          else
+            shasum -a 256 "$asset" > "${asset}.sha256"
+          fi
+      - uses: softprops/action-gh-release@v3
+        with:
+          files: span-${{ matrix.target }}*
+          fail_on_unmatched_files: true
+          prerelease: ${{ contains(github.ref_name, '-') }}
+          body: |
+            Download the binary matching your platform and its SHA-256 checksum.
+            Retain the attached LICENSE, NOTICE, and THIRD-PARTY-NOTICES.md files.
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  notices:
+    name: License and notices
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: softprops/action-gh-release@v3
+        with:
+          files: |
+            LICENSE
+            NOTICE
+            THIRD-PARTY-NOTICES.md
+          fail_on_unmatched_files: true
+          prerelease: ${{ contains(github.ref_name, '-') }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

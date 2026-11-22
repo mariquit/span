@@ -1,0 +1,269 @@
+{
+  "model": "onnx-community/bge-reranker-v2-m3-ONNX",
+  "revision": "6f5ff65298512715a1e669753bc754d2bc8f367b",
+  "precision": "quantized INT8",
+  "provider": [
+    "CPUExecutionProvider"
+  ],
+  "threads": 8,
+  "max_tokens": 256,
+  "documents": 18,
+  "queries": 12,
+  "model_load_ms": 305.7448340114206,
+  "runtime": {
+    "onnxruntime": "1.31.1",
+    "platform": "Linux-7.2.10-arch1-1-x86_64-with-glibc2.44",
+    "cpu_count": 32
+  },
+  "fixture_sha256": "fbfd3005d4c10af6b97df9434a542ead132de72ff854151e695360639bdffc1a",
+  "limitations": [
+    "Synthetic English fixture, one relevant document per query",
+    "Single warm run, not production quality or load testing",
+    "Raw BGE ranks all documents; adapter uses bounded boosts plus MMR",
+    "No private user data"
+  ],
+  "summary": {
+    "default": {
+      "mrr_at_10": 0.8333333333333334,
+      "ndcg_at_10": 0.8551549589285763,
+      "hit_at_1": 0.75,
+      "recall_at_5": 0.9166666666666666,
+      "median_ms": 13.20558151928708,
+      "p95_ms": 23.724103093263682
+    },
+    "adapter_bge": {
+      "mrr_at_10": 0.8333333333333334,
+      "ndcg_at_10": 0.8551549589285763,
+      "hit_at_1": 0.75,
+      "recall_at_5": 0.9166666666666666,
+      "median_ms": 236.82511350489222,
+      "p95_ms": 260.74956312659197
+    },
+    "raw_bge": {
+      "mrr_at_10": 0.7708333333333334,
+      "ndcg_at_10": 0.8077113387680256,
+      "hit_at_1": 0.6666666666666666,
+      "recall_at_5": 0.9166666666666666,
+      "median_ms": 218.84076949208975,
+      "p95_ms": 238.8999708200572
+    }
+  },
+  "rows": [
+    {
+      "query": "What happens if an already rotated refresh credential is used again?",
+      "relevant": "auth",
+      "default": {
+        "rank": 1,
+        "latency_ms": 13.453831023070961,
+        "reranker_applied": false
+      },
+      "adapter_bge": {
+        "rank": 1,
+        "latency_ms": 255.50348201068118,
+        "reranker_applied": true
+      },
+      "raw_bge": {
+        "rank": 1,
+        "latency_ms": 228.37557800812647
+      }
+    },
+    {
+      "query": "How do I get a consistent copy while the database is accepting writes?",
+      "relevant": "backup",
+      "default": {
+        "rank": 1,
+        "latency_ms": 12.808923027478158,
+        "reranker_applied": false
+      },
+      "adapter_bge": {
+        "rank": 1,
+        "latency_ms": 248.6631849897094,
+        "reranker_applied": true
+      },
+      "raw_bge": {
+        "rank": 1,
+        "latency_ms": 230.76929000671953
+      }
+    },
+    {
+      "query": "Is a hidden record protected against another person who knows its ID?",
+      "relevant": "private",
+      "default": {
+        "rank": 1,
+        "latency_ms": 12.821406999137253,
+        "reranker_applied": false
+      },
+      "adapter_bge": {
+        "rank": 1,
+        "latency_ms": 238.54809498880059,
+        "reranker_applied": true
+      },
+      "raw_bge": {
+        "rank": 1,
+        "latency_ms": 208.27079395530745
+      }
+    },
+    {
+      "query": "Can we version personal agent memories in source control?",
+      "relevant": "git",
+      "default": {
+        "rank": 1,
+        "latency_ms": 12.553885986562818,
+        "reranker_applied": false
+      },
+      "adapter_bge": {
+        "rank": 1,
+        "latency_ms": 234.44828804349527,
+        "reranker_applied": true
+      },
+      "raw_bge": {
+        "rank": 1,
+        "latency_ms": 218.72708201408386
+      }
+    },
+    {
+      "query": "Which nearest-neighbor method is used without explicit configuration?",
+      "relevant": "vector",
+      "default": {
+        "rank": 1,
+        "latency_ms": 12.676806014496833,
+        "reranker_applied": false
+      },
+      "adapter_bge": {
+        "rank": 1,
+        "latency_ms": 213.09962501982227,
+        "reranker_applied": true
+      },
+      "raw_bge": {
+        "rank": 1,
+        "latency_ms": 203.00874102395028
+      }
+    },
+    {
+      "query": "How do two agents avoid both accepting the same work transfer?",
+      "relevant": "handoff",
+      "default": {
+        "rank": 11,
+        "latency_ms": 12.957332015503198,
+        "reranker_applied": false
+      },
+      "adapter_bge": {
+        "rank": 11,
+        "latency_ms": 214.18132999679074,
+        "reranker_applied": true
+      },
+      "raw_bge": {
+        "rank": 16,
+        "latency_ms": 199.1464100428857
+      }
+    },
+    {
+      "query": "What should happen if no supporting facts remain when rebuilding a knowledge page?",
+      "relevant": "pages",
+      "default": {
+        "rank": 1,
+        "latency_ms": 12.763648002874106,
+        "reranker_applied": false
+      },
+      "adapter_bge": {
+        "rank": 1,
+        "latency_ms": 232.91830398375168,
+        "reranker_applied": true
+      },
+      "raw_bge": {
+        "rank": 1,
+        "latency_ms": 234.18587702326477
+      }
+    },
+    {
+      "query": "How can a retried ingestion event avoid creating duplicates?",
+      "relevant": "capture",
+      "default": {
+        "rank": 2,
+        "latency_ms": 13.746207987423986,
+        "reranker_applied": false
+      },
+      "adapter_bge": {
+        "rank": 2,
+        "latency_ms": 217.0609929598868,
+        "reranker_applied": true
+      },
+      "raw_bge": {
+        "rank": 2,
+        "latency_ms": 207.82034000148997
+      }
+    },
+    {
+      "query": "Can a database write finish even after the HTTP operation deadline?",
+      "relevant": "timeout",
+      "default": {
+        "rank": 2,
+        "latency_ms": 13.477494998369366,
+        "reranker_applied": false
+      },
+      "adapter_bge": {
+        "rank": 2,
+        "latency_ms": 236.41830700216815,
+        "reranker_applied": true
+      },
+      "raw_bge": {
+        "rank": 4,
+        "latency_ms": 231.26499797217548
+      }
+    },
+    {
+      "query": "Does forgetting old information happen automatically when maintenance runs?",
+      "relevant": "expiry",
+      "default": {
+        "rank": 1,
+        "latency_ms": 15.430521976668388,
+        "reranker_applied": false
+      },
+      "adapter_bge": {
+        "rank": 1,
+        "latency_ms": 246.5389560093172,
+        "reranker_applied": true
+      },
+      "raw_bge": {
+        "rank": 1,
+        "latency_ms": 244.66164101613685
+      }
+    },
+    {
+      "query": "Does the Markdown projection preserve relationship history for full recovery?",
+      "relevant": "export",
+      "default": {
+        "rank": 1,
+        "latency_ms": 32.77405502740294,
+        "reranker_applied": false
+      },
+      "adapter_bge": {
+        "rank": 1,
+        "latency_ms": 267.1614400460385,
+        "reranker_applied": true
+      },
+      "raw_bge": {
+        "rank": 1,
+        "latency_ms": 218.95445697009563
+      }
+    },
+    {
+      "query": "What prevents unrelated evidence from dominating the final search results?",
+      "relevant": "ranking",
+      "default": {
+        "rank": 1,
+        "latency_ms": 16.319596965331584,
+        "reranker_applied": false
+      },
+      "adapter_bge": {
+        "rank": 1,
+        "latency_ms": 237.23192000761628,
+        "reranker_applied": true
+      },
+      "raw_bge": {
+        "rank": 2,
+        "latency_ms": 215.59753199107945
+      }
+    }
+  ]
+}

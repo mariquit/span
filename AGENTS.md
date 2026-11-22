@@ -1,0 +1,1 @@
+If `act` is on PATH and this change would make GitHub run a test, build, or release workflow under `.github/workflows/`, load the `act` skill and run that workflow locally before finishing; if `act` is not installed, skip.

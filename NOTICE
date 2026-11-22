@@ -1,0 +1,18 @@
+# Span Notices
+
+Span was originally created by John Anthony Mariquit.
+Copyright (c) 2026 John Anthony Mariquit.
+
+## Community Documents
+
+[`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) is adapted from [Contributor Covenant
+2.1](https://www.contributor-covenant.org/version/2/1/code_of_conduct/), released
+under [Creative Commons Attribution 4.0 International](https://github.com/EthicalSource/contributor_covenant/blob/2.1/LICENSE.md).
+The reporting and moderation instructions were adapted for Span. The Contributor
+Covenant credits Mozilla's code of conduct enforcement ladder as inspiration for
+its Community Impact Guidelines.
+
+## Third-Party Components
+
+See [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md) for dependency and embedding
+model notices. Third-party components retain their own license terms.

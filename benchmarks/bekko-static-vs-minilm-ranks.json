@@ -1,0 +1,496 @@
+[
+  {
+    "language": "en",
+    "query": "What happens if an already rotated refresh credential is used again?",
+    "expected_memory": "auth",
+    "minilm": {
+      "dense": 1,
+      "hybrid": 1
+    },
+    "bekko": {
+      "dense": 1,
+      "hybrid": 1
+    }
+  },
+  {
+    "language": "en",
+    "query": "How do I get a consistent copy while the database is accepting writes?",
+    "expected_memory": "backup",
+    "minilm": {
+      "dense": 1,
+      "hybrid": 1
+    },
+    "bekko": {
+      "dense": 1,
+      "hybrid": 1
+    }
+  },
+  {
+    "language": "en",
+    "query": "Is a hidden record protected against another person who knows its ID?",
+    "expected_memory": "private",
+    "minilm": {
+      "dense": 1,
+      "hybrid": 1
+    },
+    "bekko": {
+      "dense": 1,
+      "hybrid": 1
+    }
+  },
+  {
+    "language": "en",
+    "query": "Can we version personal agent memories in source control?",
+    "expected_memory": "git",
+    "minilm": {
+      "dense": 4,
+      "hybrid": 3
+    },
+    "bekko": {
+      "dense": 1,
+      "hybrid": 2
+    }
+  },
+  {
+    "language": "en",
+    "query": "Which nearest-neighbor method is used without explicit configuration?",
+    "expected_memory": "vector",
+    "minilm": {
+      "dense": 1,
+      "hybrid": 1
+    },
+    "bekko": {
+      "dense": 4,
+      "hybrid": 2
+    }
+  },
+  {
+    "language": "en",
+    "query": "How do two agents avoid both accepting the same work transfer?",
+    "expected_memory": "handoff",
+    "minilm": {
+      "dense": 2,
+      "hybrid": null
+    },
+    "bekko": {
+      "dense": 10,
+      "hybrid": null
+    }
+  },
+  {
+    "language": "en",
+    "query": "What should happen if no supporting facts remain when rebuilding a knowledge page?",
+    "expected_memory": "pages",
+    "minilm": {
+      "dense": 1,
+      "hybrid": 1
+    },
+    "bekko": {
+      "dense": 1,
+      "hybrid": 1
+    }
+  },
+  {
+    "language": "en",
+    "query": "How can a retried ingestion event avoid creating duplicates?",
+    "expected_memory": "capture",
+    "minilm": {
+      "dense": 2,
+      "hybrid": 2
+    },
+    "bekko": {
+      "dense": 2,
+      "hybrid": 2
+    }
+  },
+  {
+    "language": "en",
+    "query": "Can a database write finish even after the HTTP operation deadline?",
+    "expected_memory": "timeout",
+    "minilm": {
+      "dense": 5,
+      "hybrid": 4
+    },
+    "bekko": {
+      "dense": 5,
+      "hybrid": 5
+    }
+  },
+  {
+    "language": "en",
+    "query": "Does forgetting old information happen automatically when maintenance runs?",
+    "expected_memory": "expiry",
+    "minilm": {
+      "dense": 1,
+      "hybrid": 1
+    },
+    "bekko": {
+      "dense": 1,
+      "hybrid": 1
+    }
+  },
+  {
+    "language": "en",
+    "query": "Does the Markdown projection preserve relationship history for full recovery?",
+    "expected_memory": "export",
+    "minilm": {
+      "dense": 1,
+      "hybrid": 1
+    },
+    "bekko": {
+      "dense": 1,
+      "hybrid": 1
+    }
+  },
+  {
+    "language": "en",
+    "query": "What prevents unrelated evidence from dominating the final search results?",
+    "expected_memory": "ranking",
+    "minilm": {
+      "dense": 1,
+      "hybrid": 1
+    },
+    "bekko": {
+      "dense": 3,
+      "hybrid": 2
+    }
+  },
+  {
+    "language": "en",
+    "query": "Where should process diagnostics go so that the client wire format stays valid?",
+    "expected_memory": "logger",
+    "minilm": {
+      "dense": 7,
+      "hybrid": null
+    },
+    "bekko": {
+      "dense": 9,
+      "hybrid": null
+    }
+  },
+  {
+    "language": "en",
+    "query": "Can I reserve a handoff by reading the pending work list?",
+    "expected_memory": "claim-state",
+    "minilm": {
+      "dense": 1,
+      "hybrid": 1
+    },
+    "bekko": {
+      "dense": 3,
+      "hybrid": 2
+    }
+  },
+  {
+    "language": "en",
+    "query": "Why did changing the tags create another version when the wording stayed the same?",
+    "expected_memory": "dedupe",
+    "minilm": {
+      "dense": 1,
+      "hybrid": 1
+    },
+    "bekko": {
+      "dense": 1,
+      "hybrid": 1
+    }
+  },
+  {
+    "language": "en",
+    "query": "If a foundation claim was replaced, can the agent still receive the derived conclusion?",
+    "expected_memory": "evidence",
+    "minilm": {
+      "dense": 3,
+      "hybrid": 2
+    },
+    "bekko": {
+      "dense": 1,
+      "hybrid": 1
+    }
+  },
+  {
+    "language": "en",
+    "query": "Will erasing the latest correction make outdated advice searchable again?",
+    "expected_memory": "deletion",
+    "minilm": {
+      "dense": 1,
+      "hybrid": null
+    },
+    "bekko": {
+      "dense": 1,
+      "hybrid": null
+    }
+  },
+  {
+    "language": "en",
+    "query": "How do I turn on graph-based vector lookup in a compiled binary?",
+    "expected_memory": "feature",
+    "minilm": {
+      "dense": 1,
+      "hybrid": 1
+    },
+    "bekko": {
+      "dense": 1,
+      "hybrid": 1
+    }
+  },
+  {
+    "language": "en",
+    "query": "What tells me the installer file was not corrupted in transit?",
+    "expected_memory": "release",
+    "minilm": {
+      "dense": 1,
+      "hybrid": 1
+    },
+    "bekko": {
+      "dense": 19,
+      "hybrid": null
+    }
+  },
+  {
+    "language": "en",
+    "query": "Can I view activity from a neighboring repository just by supplying its record as the time anchor?",
+    "expected_memory": "pagination",
+    "minilm": {
+      "dense": 1,
+      "hybrid": 1
+    },
+    "bekko": {
+      "dense": 1,
+      "hybrid": 1
+    }
+  },
+  {
+    "language": "ja",
+    "query": "データベースへの書き込みが続いていても、一貫性のあるコピーを作るには？",
+    "expected_memory": "backup",
+    "minilm": {
+      "dense": 10,
+      "hybrid": null
+    },
+    "bekko": {
+      "dense": 1,
+      "hybrid": 1
+    }
+  },
+  {
+    "language": "ja",
+    "query": "他のエージェントと同じ引き継ぎを同時に取得しないようにするには？",
+    "expected_memory": "handoff",
+    "minilm": {
+      "dense": 21,
+      "hybrid": null
+    },
+    "bekko": {
+      "dense": 9,
+      "hybrid": null
+    }
+  },
+  {
+    "language": "ja",
+    "query": "古い情報は保守処理で自動的に削除されますか？",
+    "expected_memory": "expiry",
+    "minilm": {
+      "dense": 2,
+      "hybrid": 2
+    },
+    "bekko": {
+      "dense": 1,
+      "hybrid": 1
+    }
+  },
+  {
+    "language": "ja",
+    "query": "同じ取り込みイベントを再送しても重複を作らない方法は？",
+    "expected_memory": "capture",
+    "minilm": {
+      "dense": 16,
+      "hybrid": null
+    },
+    "bekko": {
+      "dense": 3,
+      "hybrid": 3
+    }
+  },
+  {
+    "language": "ja",
+    "query": "クライアントの通信形式を壊さないため、ログをどこに出せばいいですか？",
+    "expected_memory": "logger",
+    "minilm": {
+      "dense": 4,
+      "hybrid": 5
+    },
+    "bekko": {
+      "dense": 22,
+      "hybrid": null
+    }
+  },
+  {
+    "language": "ja",
+    "query": "内容を変えずにタグだけ直したら、なぜ新しい版ができましたか？",
+    "expected_memory": "dedupe",
+    "minilm": {
+      "dense": 25,
+      "hybrid": null
+    },
+    "bekko": {
+      "dense": 12,
+      "hybrid": null
+    }
+  },
+  {
+    "language": "es",
+    "query": "¿Cómo creo una copia coherente mientras la base de datos sigue aceptando escrituras?",
+    "expected_memory": "backup",
+    "minilm": {
+      "dense": 29,
+      "hybrid": null
+    },
+    "bekko": {
+      "dense": 1,
+      "hybrid": 1
+    }
+  },
+  {
+    "language": "es",
+    "query": "¿Cómo se impide que dos agentes acepten el mismo traspaso?",
+    "expected_memory": "handoff",
+    "minilm": {
+      "dense": 13,
+      "hybrid": null
+    },
+    "bekko": {
+      "dense": 26,
+      "hybrid": null
+    }
+  },
+  {
+    "language": "es",
+    "query": "¿Se borra automáticamente la información antigua durante el mantenimiento?",
+    "expected_memory": "expiry",
+    "minilm": {
+      "dense": 4,
+      "hybrid": 4
+    },
+    "bekko": {
+      "dense": 1,
+      "hybrid": 1
+    }
+  },
+  {
+    "language": "es",
+    "query": "¿Cómo se evitan duplicados al reenviar un evento de captura?",
+    "expected_memory": "capture",
+    "minilm": {
+      "dense": 2,
+      "hybrid": 4
+    },
+    "bekko": {
+      "dense": 2,
+      "hybrid": 3
+    }
+  },
+  {
+    "language": "es",
+    "query": "¿Dónde deben salir los registros de diagnóstico sin romper el protocolo del cliente?",
+    "expected_memory": "logger",
+    "minilm": {
+      "dense": 4,
+      "hybrid": 5
+    },
+    "bekko": {
+      "dense": 17,
+      "hybrid": null
+    }
+  },
+  {
+    "language": "es",
+    "query": "¿Por qué se crea otra revisión al cambiar solo las etiquetas?",
+    "expected_memory": "dedupe",
+    "minilm": {
+      "dense": 1,
+      "hybrid": 1
+    },
+    "bekko": {
+      "dense": 1,
+      "hybrid": 1
+    }
+  },
+  {
+    "language": "zh",
+    "query": "数据库正在写入时，怎样生成一致的备份？",
+    "expected_memory": "backup",
+    "minilm": {
+      "dense": 10,
+      "hybrid": null
+    },
+    "bekko": {
+      "dense": 1,
+      "hybrid": 1
+    }
+  },
+  {
+    "language": "zh",
+    "query": "怎样防止两个代理同时领取同一项交接任务？",
+    "expected_memory": "handoff",
+    "minilm": {
+      "dense": 6,
+      "hybrid": null
+    },
+    "bekko": {
+      "dense": 6,
+      "hybrid": null
+    }
+  },
+  {
+    "language": "zh",
+    "query": "维护时会自动删除过期信息吗？",
+    "expected_memory": "expiry",
+    "minilm": {
+      "dense": 13,
+      "hybrid": null
+    },
+    "bekko": {
+      "dense": 1,
+      "hybrid": 1
+    }
+  },
+  {
+    "language": "zh",
+    "query": "重试一次事件采集时，怎样避免创建重复记录？",
+    "expected_memory": "capture",
+    "minilm": {
+      "dense": 7,
+      "hybrid": null
+    },
+    "bekko": {
+      "dense": 6,
+      "hybrid": null
+    }
+  },
+  {
+    "language": "zh",
+    "query": "诊断日志应该写到哪里才不会破坏客户端通信协议？",
+    "expected_memory": "logger",
+    "minilm": {
+      "dense": 3,
+      "hybrid": 2
+    },
+    "bekko": {
+      "dense": 13,
+      "hybrid": null
+    }
+  },
+  {
+    "language": "zh",
+    "query": "内容没变，只修改了标签，为什么会生成新的修订版本？",
+    "expected_memory": "dedupe",
+    "minilm": {
+      "dense": 34,
+      "hybrid": null
+    },
+    "bekko": {
+      "dense": 2,
+      "hybrid": 4
+    }
+  }
+]
