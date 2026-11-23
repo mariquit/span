@@ -225,38 +225,11 @@ registration. Check for project-local overrides or older registrations named
 ChatGPT Desktop uses the local Codex-host configuration where supported. The
 loopback endpoint is not directly reachable from ChatGPT web.
 
-### OpenCode V2 manual setup
+### OpenCode V2 setup
 
-Add a global Streamable HTTP server and verify it connects:
-
-```sh
-opencode mcp add span --global --url http://127.0.0.1:8787/mcp \
-  --header 'Authorization=Bearer {env:SPAN_HTTP_TOKEN}'
-opencode mcp list
-```
-
-For manual configuration, disable OAuth explicitly because Span uses a bearer
-token supplied by the environment:
-
-```jsonc
-{
-  "$schema": "https://opencode.ai/config.json",
-  "mcp": {
-    "servers": {
-      "span": {
-        "type": "remote",
-        "url": "http://127.0.0.1:8787/mcp",
-        "oauth": false,
-        "headers": {"Authorization": "Bearer {env:SPAN_HTTP_TOKEN}"},
-        "timeout": {
-          "startup": 60000,
-          "execution": 120000
-        }
-      }
-    }
-  }
-}
-```
+Follow the [OpenCode setup guide](docs/opencode-setup.md) to connect Span, load
+the agent memory policy, and try a scoped search and write. Hook capture is
+separately opt-in; stored memories are not automatically injected into prompts.
 
 ## MCP tools
 
